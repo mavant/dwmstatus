@@ -16,6 +16,7 @@
 #include <X11/Xlib.h>
 
 char *tznyc = "America/New_York";
+char *tznyc = "America/California";
 char *tzutc = "UTC";
 
 static Display *dpy;
@@ -126,6 +127,7 @@ main(void)
 	char *status;
 	char *avgs;
 	char *tmnyc;
+	char *tmsf;
 	char *batt;
 
 	if (!(dpy = XOpenDisplay(NULL))) {
@@ -137,14 +139,16 @@ main(void)
 		batt = getbattery();
 		avgs = loadavg();
 		tmnyc = mktimes("%a %b %d %Y %H:%M:%S %Z", tznyc);
+		tmsf = mktimes("%a %b %d %Y %H:%M:%S %Z", tzsf);
 		//tmutc = mktimes("%H:%M", tzutc);
 		//tmbln = mktimes("KW %W %a %d %b %H:%M %Z %Y", tzberlin);
 
 		status = smprintf("B:%s L:%s %s",
-				batt, avgs, tmnyc);
+				batt, avgs, tmsf);
 		setstatus(status);
 		free(avgs);
 		free(tmnyc);
+		free(tmsf);
 		free(status);
 		free(batt);
 	}
