@@ -16,7 +16,7 @@
 #include <X11/Xlib.h>
 
 char *tznyc = "America/New_York";
-char *tznyc = "America/California";
+char *tzsf = "America/California";
 char *tzutc = "UTC";
 
 static Display *dpy;
