@@ -1,7 +1,8 @@
 #define _BSD_SOURCE
-#define BATT_NOW        "/sys/class/power_supply/BAT0/charge_now"
-#define BATT_FULL       "/sys/class/power_supply/BAT0/charge_full"
-#define BATT_STATUS       "/sys/class/power_supply/BAT0/status"
+#define BATT_NOW "/sys/class/power_supply/BAT0/energy_now"
+#define BATT_FULL "/sys/class/power_supply/BAT0/energy_full"
+#define BATT_STATUS "/sys/class/power_supply/BAT0/status"
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
