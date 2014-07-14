@@ -144,7 +144,7 @@ main(void)
 		//tmutc = mktimes("%H:%M", tzutc);
 		//tmbln = mktimes("KW %W %a %d %b %H:%M %Z %Y", tzberlin);
 
-		status = smprintf("B:%s L:%s %s",
+		status = smprintf("B:%s L:%s %s         ",
 				batt, avgs, tmsf);
 		setstatus(status);
 		free(avgs);
